@@ -6,16 +6,20 @@ import styles from './SearchResultsStyles';
 
 const mapIcon = require('../../../../assets/map.png')
 
-const SearchResults = ({predictions}) => {
+const SearchResults = ({predictions, getSelectedAddress}) => {
+    function handleSelectedAddress(placeID) {
+        getSelectedAddress(placeID)
+    }
+
     return(
         <View style={styles.searchResultsWrapper}>    
             <List
                 dataArray={predictions}
                 renderRow={(item) => (
                     <View>
-                        <ListItem>                    
+                        <ListItem onPress={() => handleSelectedAddress(item.placeID)} button avatar>                    
                             <Image
-                                source={mapIcon} style={{ height: 20, width: 20 }}
+                                source={mapIcon} style={{ height: 20, width: 20, marginRight: 8 }}
                             />     
                             <Body>
                                 <Text style={styles.primaryText}>{item.primaryText}</Text>

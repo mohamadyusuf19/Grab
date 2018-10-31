@@ -5,7 +5,8 @@ import styles from './SearchBoxStyles';
 
 const searchBoxIcon = require('../../../../assets/search.png')
 
-const SearchBox = ({ getInputData, toggleSearchResultModal, getAddressPrediction }) => {
+const SearchBox = ({ getInputData, toggleSearchResultModal, getAddressPrediction, selectedAddress }) => {
+    const { selectedPickUp, selectedDropOff } = selectedAddress || {};
     function handleInput(key, val) {
         getInputData({
             key,
@@ -25,6 +26,7 @@ const SearchBox = ({ getInputData, toggleSearchResultModal, getAddressPrediction
                         onFocus={() => toggleSearchResultModal('pickUp')}
                         placeholder="Choose pick-up location" 
                         onChangeText={handleInput.bind(this, 'pickUp')}
+                        value={selectedPickUp && selectedPickUp.name}
                     />
                 </InputGroup>
             </View>
@@ -37,6 +39,7 @@ const SearchBox = ({ getInputData, toggleSearchResultModal, getAddressPrediction
                         onFocus={() => toggleSearchResultModal('dropOff')}
                         placeholder="Choose drop-off location" 
                         onChangeText={handleInput.bind(this, 'dropOff')}
+                        value={selectedDropOff && selectedDropOff.name}
                     />
                 </InputGroup>
             </View>
