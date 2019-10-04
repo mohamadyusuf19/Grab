@@ -1,13 +1,6 @@
 # Grab
 learn to make application like Grab from react-native, redux, react-native-maps and react-native-google-places
 
-
-## Tokopedia Clone React Native
-
-<img src="./screenshot/1.jpeg" width="170"><img src="./screenshot/2.jpeg" width="170"><img src="./screenshot/3.jpeg" width="170">
-<img src="./screenshot/4.jpeg" width="170"><img src="./screenshot/5.jpeg" width="170">
-
-
 ## Stack
 1. React Navigation
 2. Redux
